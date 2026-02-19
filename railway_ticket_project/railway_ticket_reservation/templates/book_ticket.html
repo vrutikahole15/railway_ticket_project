@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Book a Ticket</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9; }
+        form { max-width: 500px; margin: auto; background: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; }
+        button { margin-top: 15px; padding: 10px 15px; background-color: #3498db; color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+        button:hover { background-color: #2980b9; }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book a Ticket</h1>
+    <form method="post" action="/api/v1/tickets/book">
+        {% csrf_token %}
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        
+        <label>Age:</label>
+        <input type="number" name="age" required>
+        
+        <label>Gender:</label>
+        <select name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        
+        <label>Has Children:</label>
+        <input type="checkbox" name="has_children">
+        
+        <button type="submit">Book Ticket</button>
+        <button class="back-button" onclick="history.back()">Go Back</button>
+    </form>
+</body>
+</html>

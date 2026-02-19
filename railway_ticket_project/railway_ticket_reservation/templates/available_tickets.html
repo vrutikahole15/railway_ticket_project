@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Available Tickets</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .back-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        .back-button:hover { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+    <h1>Available Tickets</h1>
+    <div class="summary">
+        <p>Available Confirmed Tickets: {{ available_confirmed }}</p>
+        <p>Available RAC: {{ available_rac }}</p>
+        <p>Available Waiting List: {{ available_waiting }}</p>
+    </div>
+    <a href="{% url 'api' %}" class="back-button">Go Back</a>
+</body>
+</html>
