@@ -36,7 +36,7 @@ Virtualenv: Tool to create isolated Python environments.
 2.2 Installation Steps
 Clone the Repository
 
-git clone 
+git clone https://github.com/vrutikahole15/railway_ticket_project.git
 cd railway-ticket-reservation-api
 Create and Activate a Virtual Environment
 python -m venv env
